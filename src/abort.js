@@ -7,9 +7,9 @@ exports = module.exports = function abort() {
 
 exports.Abort = class extends Error {}
 
-exports.unabort = f => (...args) => {
+exports.unabort = f => async (...args) => {
   try {
-    return f(...args)
+    return await f(...args)
   } catch (e) {
     // silently catch the abort() call
     if (!(e instanceof exports.Abort)) {
