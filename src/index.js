@@ -7,13 +7,14 @@ const { verb, isChecking } = require('./flags')
 const defaultRoot = require('./project-root')
 const { read, write } = require('./try-fs')
 const { register } = require('./paths')
+const { unabort } = require('./abort')
 const spinner = require('./spinner')
 const diff = require('./diff')
 
 const readRule = require('./actions/read-rule')
 const updateReadme = require('./actions/update-readme')
 
-module.exports = async (projectRoot = defaultRoot) => {
+module.exports = unabort(async (projectRoot = defaultRoot) => {
   const project = register(await projectRoot)
   const { rulesDir, readmePath } = project
 
@@ -69,4 +70,4 @@ module.exports = async (projectRoot = defaultRoot) => {
       updatedReadme
     )
   }
-}
+})
