@@ -43,7 +43,7 @@
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
-    "rootDir": "src",
+    "rootDir": "lib",
     "testEnvironment": "node"
   },
   "license": "ISC",
