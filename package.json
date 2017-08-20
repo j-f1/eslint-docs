@@ -34,7 +34,7 @@
     "prettier": "^1.5.3"
   },
   "scripts": {
-    "prepublish": "npm run compile && nsp check",
+    "prepublishOnly": "npm run compile && nsp check",
     "pretest": "eslint . --fix",
     "compile": "async-to-gen --out-dir lib/ src/",
     "test": "jest"
