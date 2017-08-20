@@ -1,0 +1,43 @@
+{
+  "name": "eslint-docs",
+  "version": "0.0.0",
+  "description": "Keep your rule names and descriptions up-to-date across your repo",
+  "homepage": "https://github.com/j-f1/eslint-docs",
+  "author": {
+    "name": "Jed Fox",
+    "email": "git@twopointzero.us",
+    "url": "https://j-f1.github.io"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "eslint",
+    "cli"
+  ],
+  "devDependencies": {
+    "nsp": "^2.6.3",
+    "eslint": "^4.1.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "j-f1/eslint-docs",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "ISC"
+}
