@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildBlock properly formats the rule metadata 1`] = `
+"<!-- begin rule list -->
+* [\`foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
+* [\`no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+<!-- end rule list -->"
+`;
+
+exports[`updateReadme is case-insensitive 1`] = `
+"# ESLINT-PLUGIN-TEST
+SOME DESCRIPTION
+<!-- begin rule list -->
+* [\`foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
+* [\`no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+<!-- end rule list -->
+MORE DESCRIPTION
+"
+`;
+
+exports[`updateReadme replaces the block if it’s already present 1`] = `
+"# eslint-plugin-test
+Some description
+<!-- begin rule list -->
+* [\`foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
+* [\`no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+<!-- end rule list -->
+More description
+"
+`;
