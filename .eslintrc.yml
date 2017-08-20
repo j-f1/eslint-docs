@@ -1,0 +1,19 @@
+root: true
+plugins:
+  - prettier
+  - markdown
+
+extends:
+  - standard
+  - prettier
+
+rules:
+  prettier/prettier:
+    - error
+    - semi: false
+      singleQuote: true
+      trailingComma: es5
+
+env:
+  jest: true
+  node: true
