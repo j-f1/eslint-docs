@@ -1,4 +1,6 @@
 # eslint-docs [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/j-f1/eslint-docs.svg)](https://greenkeeper.io/)
 > Keep your rule names and descriptions up-to-date across your repo
 
 ## Installation
