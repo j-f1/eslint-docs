@@ -35,9 +35,11 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
-    "pretest": "eslint . --fix",
+    "pretest": "npm run compile",
+    "eslint": "eslint ./src ./bin --fix",
     "compile": "async-to-gen --out-dir lib/ src/",
-    "test": "jest"
+    "test": "npm run eslint && npm run jest",
+    "jest": "jest"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
