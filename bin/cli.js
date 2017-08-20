@@ -7,9 +7,11 @@ const spinner = require('../lib/spinner')
 
 const run = require('../lib')
 
-run().catch(err => {
-  if (!(err instanceof Abort)) {
-    spinner.fail('Oops, something went wrong!')
-    console.error(chalk.gray(err.stack))
-  }
-})
+run()
+  .catch(err => {
+    if (!(err instanceof Abort)) {
+      spinner.fail('Oops, something went wrong!')
+      console.error(chalk.gray(err.stack))
+    }
+  })
+  .then(() => console.log(''))
