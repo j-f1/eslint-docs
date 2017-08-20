@@ -8,7 +8,7 @@ const defaultRoot = require('./project-root')
 const { read, write } = require('./try-fs')
 const { register } = require('./paths')
 const spinner = require('./spinner')
-const diff = require('../diff')
+const diff = require('./diff')
 
 const readRule = require('./actions/read-rule')
 const updateReadme = require('./actions/update-readme')
