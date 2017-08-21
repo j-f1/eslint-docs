@@ -1,6 +1,6 @@
-const updateReadme = require('../../actions/update-readme')
-
 jest.mock('../../spinner')
+
+const updateReadme = require('../../actions/update-readme')
 
 const fakeMetadata = [
   {
