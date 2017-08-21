@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parse() ignores --ext at the end of the args 1`] = `
+Object {
+  "args": Array [
+    "--ext",
+  ],
+  "ext": ".js",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() ignores --ext at the end of the args 2`] = `
+Object {
+  "args": Array [
+    "check",
+    "--ext",
+  ],
+  "ext": ".js",
+  "isChecking": true,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() returns the full object 1`] = `
+Object {
+  "args": Array [],
+  "ext": ".js",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports \`check\` 1`] = `
+Object {
+  "args": Array [
+    "check",
+  ],
+  "ext": ".js",
+  "isChecking": true,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports --ext .foo 1`] = `
+Object {
+  "args": Array [
+    "--ext",
+    ".ts",
+  ],
+  "ext": ".ts",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports --ext foo 1`] = `
+Object {
+  "args": Array [
+    "--ext",
+    "ts",
+  ],
+  "ext": ".ts",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports --ext=.foo 1`] = `
+Object {
+  "args": Array [
+    "--ext=.ts",
+  ],
+  "ext": ".ts",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports --ext=foo 1`] = `
+Object {
+  "args": Array [
+    "--ext=ts",
+  ],
+  "ext": ".ts",
+  "isChecking": false,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports both --ext and check 1`] = `
+Object {
+  "args": Array [
+    "--ext",
+    "js",
+    "check",
+  ],
+  "ext": ".js",
+  "isChecking": true,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
+
+exports[`parse() supports both --ext=foo and check 1`] = `
+Object {
+  "args": Array [
+    "--ext=js",
+    "check",
+  ],
+  "ext": ".js",
+  "isChecking": true,
+  "parse": [Function],
+  "verb": "Updating",
+}
+`;
