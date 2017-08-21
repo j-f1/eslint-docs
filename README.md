@@ -1,6 +1,9 @@
-# eslint-docs [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+# eslint-docs
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/j-f1/eslint-docs.svg)](https://greenkeeper.io/)
+[![NPM version](https://img.shields.io/npm/v/eslint-docs.svg?style=flat-square)](https://npmjs.org/package/eslint-docs)
+[![Build Status](https://img.shields.io/travis/j-f1/eslint-docs/master.svg?style=flat-square)](https://travis-ci.org/j-f1/eslint-docs)
+[![Greenkeeper enabled](https://img.shields.io/badge/greenkeeper-enabled-00c775.svg?style=flat-square)](https://greenkeeper.io/)
+
 > Keep your rule names and descriptions up-to-date across your repo
 
 ## Installation
@@ -60,9 +63,3 @@ that includes a `package.json`
 ## License
 
 ISC © [Jed Fox](https://j-f1.github.io)
-
-
-[npm-image]: https://badge.fury.io/js/eslint-docs.svg
-[npm-url]: https://npmjs.org/package/eslint-docs
-[travis-image]: https://travis-ci.org/j-f1/eslint-docs.svg?branch=master
-[travis-url]: https://travis-ci.org/j-f1/eslint-docs
