@@ -15,6 +15,7 @@ exports = module.exports = (readme, ruleMeta) => {
   } else {
     const message =
       'The README does not include a section to place the rule docs into.\nAdding it to the end instead.'
+    // istanbul ignore next
     if (isChecking) {
       spinner.fail(message)
       abort()

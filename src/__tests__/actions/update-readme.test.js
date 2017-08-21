@@ -31,6 +31,19 @@ describe('updateReadme', () => {
   it('replaces the block if it’s already present', () => {
     expect(updateReadme(fakeReadme, fakeMetadata)).toMatchSnapshot()
   })
+  it('appends the block if it doesn’t exist', () => {
+    expect(
+      updateReadme(
+        `
+# eslint-plugin-test
+Some description
+(I’m real lazy :()
+More description
+        `.trim() + '\n',
+        fakeMetadata
+      )
+    ).toMatchSnapshot()
+  })
   it('is idempotent', () => {
     const firstPass = updateReadme(fakeReadme, fakeMetadata)
     const secondPass = updateReadme(firstPass, fakeMetadata)

@@ -7,6 +7,20 @@ exports[`buildBlock properly formats the rule metadata 1`] = `
 <!-- end rule list -->"
 `;
 
+exports[`updateReadme appends the block if it doesn’t exist 1`] = `
+"# eslint-plugin-test
+Some description
+(I’m real lazy :()
+More description
+
+
+<!-- begin rule list -->
+* [\`foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
+* [\`no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+<!-- end rule list -->
+"
+`;
+
 exports[`updateReadme is case-insensitive 1`] = `
 "# ESLINT-PLUGIN-TEST
 SOME DESCRIPTION
