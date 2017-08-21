@@ -37,7 +37,7 @@
     "prepublishOnly": "npm run compile && nsp check",
     "pretest": "npm run compile",
     "eslint": "eslint ./src ./bin --fix",
-    "compile": "async-to-gen --out-dir lib/ src/",
+    "compile": "rm -rf lib && async-to-gen --out-dir lib/ src/ && node script/copy-snapshots",
     "test": "npm run eslint && npm run jest",
     "jest": "jest"
   },
