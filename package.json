@@ -37,7 +37,7 @@
     "prepublishOnly": "npm run compile && nsp check",
     "pretest": "npm run compile",
     "eslint": "eslint ./src ./bin --fix",
-    "compile": "rm -rf lib && async-to-gen --out-dir lib/ src/ && node script/copy-snapshots",
+    "compile": "rm -rf lib && async-to-gen --out-dir lib/ src/",
     "test": "npm run eslint && npm run jest",
     "jest": "jest"
   },
@@ -45,7 +45,10 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
-    "rootDir": "lib",
+    "rootDir": "src",
+    "transform": {
+      ".*\\.js": "async-to-gen"
+    },
     "testEnvironment": "node"
   },
   "license": "ISC",
