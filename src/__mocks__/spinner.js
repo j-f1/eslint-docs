@@ -4,4 +4,12 @@ const mock = {}
   mock[k] = jest.fn()
 })
 
-module.exports = mock
+exports = module.exports = mock
+
+exports.console = console
+global.console = {
+  log: jest.fn(),
+  warn: jest.fn(),
+  error: jest.fn(),
+  info: jest.fn(),
+}
