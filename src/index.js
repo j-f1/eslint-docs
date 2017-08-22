@@ -49,11 +49,7 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
       docPath
     )
     if (docs) {
-      const { meta, newDocs } = readRule(
-        { rule, docs, friendlyDocPath },
-        project,
-        name
-      )
+      const { meta, newDocs } = readRule({ rule, docs, friendlyDocPath }, name)
       ruleMeta.push(meta)
       if (!isChecking) {
         await write(

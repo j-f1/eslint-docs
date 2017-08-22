@@ -5,11 +5,7 @@ const spinner = require('../spinner')
 const abort = require('../abort')
 const diff = require('../diff')
 
-module.exports = (
-  { rule, docs, friendlyDocPath },
-  { docsDir, projectRoot },
-  name
-) => {
+module.exports = ({ rule, docs, friendlyDocPath }, name) => {
   if (!rule || !rule.meta || !rule.meta.docs || !rule.meta.docs.description) {
     spinner.fail(`Rule ${name} does not have a description`)
     abort()
