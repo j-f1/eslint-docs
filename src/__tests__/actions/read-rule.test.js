@@ -3,6 +3,7 @@ jest.mock('../../spinner')
 const spinner = require('../../spinner')
 
 const chalk = require('chalk')
+chalk.enabled = true
 
 const readRule = require('../../actions/read-rule')
 
