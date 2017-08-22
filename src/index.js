@@ -19,6 +19,7 @@ const updateReadme = require('./actions/update-readme')
 module.exports = unabort(async (projectRoot = defaultRoot) => {
   const project = register(await projectRoot)
   const { rulesDir, readmePath, docsDir } = project
+  projectRoot = project.projectRoot
 
   spinner.start('Reading rules...')
 
