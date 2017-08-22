@@ -9,6 +9,8 @@
     "url": "https://j-f1.github.io"
   },
   "files": [
+    "LICENSE",
+    "bin",
     "lib"
   ],
   "bin": "bin/cli.js",
