@@ -1,32 +1,21 @@
-const path = require('path')
-
 const chalk = require('chalk')
 
 const { isChecking } = require('../flags')
-const { read, write } = require('../try-fs')
 const spinner = require('../spinner')
 const abort = require('../abort')
 const diff = require('../diff')
 
-module.exports = async (rule, { docsDir, projectRoot }, name) => {
+module.exports = (
+  { rule, docs, friendlyDocPath },
+  { docsDir, projectRoot },
+  name
+) => {
   if (!rule || !rule.meta || !rule.meta.docs || !rule.meta.docs.description) {
     spinner.fail(`Rule ${name} does not have a description`)
     abort()
   }
 
   const { description } = rule.meta.docs
-
-  const docPath = path.resolve(docsDir, name + '.md')
-  const friendlyDocPath = path
-    .relative(projectRoot, docPath)
-    .replace(name, chalk.bold(name))
-
-  const docs = await read(
-    null,
-    `Could not read the docs for ${chalk.bold(name)} at ${friendlyDocPath}`,
-    docPath
-  )
-  if (!docs) return
 
   const newDocs = [`# ${description} (${name})`]
     .concat(docs.split('\n').slice(1))
@@ -50,16 +39,12 @@ module.exports = async (rule, { docsDir, projectRoot }, name) => {
 
   if (isChecking) {
     spinner.succeed(`${friendlyDocPath} is valid`)
-  } else {
-    await write(
-      `${friendlyDocPath} is up-to-date`,
-      `Could not update the docs for ${chalk.bold(name)} at ${friendlyDocPath}`,
-      docPath,
-      newDocs
-    )
   }
   return {
-    name,
-    description,
+    newDocs,
+    meta: {
+      name,
+      description,
+    },
   }
 }
