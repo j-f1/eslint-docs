@@ -1,0 +1,2 @@
+# If `lib` is ignored, then npm won’t publish it.
+coverage
