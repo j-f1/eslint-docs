@@ -1,7 +1,6 @@
 jest.mock('../../spinner')
 
 const spinner = require('../../spinner')
-const diff = require('../../diff')
 
 const chalk = require('chalk')
 
