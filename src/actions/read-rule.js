@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 
-const { isChecking } = require('../flags')
+const { isChecking, noDiffs } = require('../flags')
 const spinner = require('../spinner')
 const abort = require('../abort')
 const diff = require('../diff')
@@ -25,11 +25,11 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
           name
         )} must match the required format:`
       )
-      console.error(patch)
+      if (!noDiffs) console.error(patch)
       process.exitCode = 1
     } else {
       spinner.info(`Updating the docs for ${chalk.bold(name)}:`)
-      console.log(patch)
+      if (!noDiffs) console.log(patch)
     }
   }
 

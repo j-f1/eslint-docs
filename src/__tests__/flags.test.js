@@ -46,4 +46,8 @@ describe('parse()', () => {
     checkArgs(['--ext'])
     checkArgs(['check', '--ext'])
   })
+
+  it('supports --no-diffs', () => {
+    checkArgs(['--no-diffs'])
+  })
 })

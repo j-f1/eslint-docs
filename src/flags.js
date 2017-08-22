@@ -4,6 +4,8 @@ const parse = (args = argv) => {
   const isChecking = args.includes('check')
   const verb = exports.isChecking ? 'Checking' : 'Updating'
 
+  const noDiffs = args.includes('--no-diffs')
+
   const extArg = args.find(arg => arg.startsWith('--ext'))
   let ext = '.js'
   if (extArg) {
@@ -20,6 +22,7 @@ const parse = (args = argv) => {
 
   return {
     args,
+    noDiffs,
     isChecking,
     verb,
     ext,

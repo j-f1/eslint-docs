@@ -5,7 +5,7 @@ const path = require('path')
 
 const chalk = require('chalk')
 
-const { verb, isChecking } = require('./flags')
+const { verb, isChecking, noDiffs } = require('./flags')
 const defaultRoot = require('./project-root')
 const { read, write } = require('./try-fs')
 const { register } = require('./paths')
@@ -73,11 +73,11 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
     const patch = diff('README.md', 'generated', readme, updatedReadme)
     if (isChecking) {
       spinner.fail('The README is not correctly formatted. Please update it:')
-      console.error(patch)
+      if (!noDiffs) console.error(patch)
       process.exitCode = 1
     } else {
       spinner.info('Updating README:')
-      console.log(patch)
+      if (!noDiffs) console.log(patch)
     }
   }
 
