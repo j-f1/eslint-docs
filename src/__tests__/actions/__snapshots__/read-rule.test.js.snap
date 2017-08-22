@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`readRule() updates the docs if needed 1`] = `
+Array [
+  "  [31m--- docs/rules/[1mrequire-empty[22m[39m
+  [32m+++ generated[39m
+  [2m[34m@@ -1,4 +1,4 @@[39m[22m
+  [31m-# ***Require that the file be empty (require-empty)[39m
+  [32m+# Require that the file be empty (require-empty)[39m
+   
+   This rule ensures great productivity by requiring that
+   all files you write are completely empty.
+  ",
+]
+`;
