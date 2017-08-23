@@ -6,8 +6,8 @@ const abort = require('../abort')
 
 const targetRe = /^<!-- begin rule list -->[\s\S]+<!-- end rule list -->$/im
 
-exports = module.exports = (readme, ruleMeta) => {
-  const ruleBlock = exports.buildBlock(ruleMeta)
+exports = module.exports = (readme, ruleMeta, { pluginName }) => {
+  const ruleBlock = exports.buildBlock(ruleMeta, pluginName)
 
   let updatedReadme
   if (targetRe.test(readme)) {
@@ -28,11 +28,11 @@ exports = module.exports = (readme, ruleMeta) => {
   return updatedReadme
 }
 
-exports.buildBlock = meta => {
+exports.buildBlock = (meta, pluginName) => {
   const ruleLines = meta
     .map(
       ({ name, description }) =>
-        `* [\`${name}\`](./docs/rules/${name}.md) \u{2014} ${description}`
+        `* [\`${pluginName}/${name}\`](./docs/rules/${name}.md) \u{2014} ${description}`
     )
     .join('\n')
 

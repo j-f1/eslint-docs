@@ -68,7 +68,7 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
   spinner.start(`${verb} README...`)
   const readme = await read(null, `Could not read the README`, readmePath)
 
-  const updatedReadme = updateReadme(readme, ruleMeta)
+  const updatedReadme = updateReadme(readme, ruleMeta, project)
 
   if (updatedReadme !== readme) {
     const patch = diff('README.md', 'generated', readme, updatedReadme)

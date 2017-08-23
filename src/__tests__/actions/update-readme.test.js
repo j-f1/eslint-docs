@@ -17,19 +17,22 @@ const fakeReadme =
 # eslint-plugin-test
 Some description
 <!-- begin rule list -->
-* [\`foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
+* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
 <!-- end rule list -->
 More description
 `.trim() + '\n'
+
+const pluginName = 'awesome'
+const project = { pluginName }
 describe('buildBlock', () => {
   it('properly formats the rule metadata', () => {
-    expect(updateReadme.buildBlock(fakeMetadata)).toMatchSnapshot()
+    expect(updateReadme.buildBlock(fakeMetadata, pluginName)).toMatchSnapshot()
   })
 })
 describe('updateReadme', () => {
   it('replaces the block if it’s already present', () => {
-    expect(updateReadme(fakeReadme, fakeMetadata)).toMatchSnapshot()
+    expect(updateReadme(fakeReadme, fakeMetadata, project)).toMatchSnapshot()
   })
   it('appends the block if it doesn’t exist', () => {
     expect(
@@ -40,18 +43,19 @@ Some description
 (I’m real lazy :()
 More description
         `.trim() + '\n',
-        fakeMetadata
+        fakeMetadata,
+        project
       )
     ).toMatchSnapshot()
   })
   it('is idempotent', () => {
-    const firstPass = updateReadme(fakeReadme, fakeMetadata)
-    const secondPass = updateReadme(firstPass, fakeMetadata)
+    const firstPass = updateReadme(fakeReadme, fakeMetadata, project)
+    const secondPass = updateReadme(firstPass, fakeMetadata, project)
     expect(secondPass).toEqual(firstPass)
   })
   it('is case-insensitive', () => {
     expect(
-      updateReadme(fakeReadme.toUpperCase(), fakeMetadata)
+      updateReadme(fakeReadme.toUpperCase(), fakeMetadata, project)
     ).toMatchSnapshot()
   })
 })
