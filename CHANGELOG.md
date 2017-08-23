@@ -1,3 +1,6 @@
+# v0.0.4
+✨ prefix the rule names with `PLUGINNAME/` in the README
+
 # v0.0.3
 🐛 unwrap Promise properly
 
