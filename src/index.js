@@ -79,17 +79,16 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
     } else {
       spinner.info('Updating README:')
       if (!noDiffs) console.log(patch)
+      await write(
+        'README.md is up-to-date',
+        `Could not update the README`,
+        readmePath,
+        updatedReadme
+      )
     }
-  }
-
-  if (isChecking) {
-    spinner.succeed('The README is valid')
   } else {
-    await write(
-      'README.md is up-to-date',
-      `Could not update the README`,
-      readmePath,
-      updatedReadme
-    )
+    if (isChecking) {
+      spinner.succeed('The README is valid')
+    }
   }
 })
