@@ -1,6 +1,6 @@
 {
   "name": "eslint-docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Keep your rule names and descriptions up-to-date across your repo",
   "homepage": "https://github.com/j-f1/eslint-docs",
   "author": {
