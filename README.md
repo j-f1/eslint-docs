@@ -47,7 +47,6 @@ In a Node.js script
 ```js
 const eslintDocs = require('eslint-docs')
 
-// If you’re fancy
 eslintDocs(yourProjectDirectory).then(() => {
   // Everything went OK!
 }, () => {
