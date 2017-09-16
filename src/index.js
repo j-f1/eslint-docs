@@ -89,6 +89,8 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
   } else {
     if (isChecking) {
       spinner.succeed('The README is valid')
+    } else {
+      spinner.succeed('The README is up-to-date')
     }
   }
 })
