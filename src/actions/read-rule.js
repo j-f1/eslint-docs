@@ -11,7 +11,7 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
     abort()
   }
 
-  const { description } = rule.meta.docs
+  const { description, extraDescription } = rule.meta.docs
 
   const newDocs = [`# ${description} (${name})`]
     .concat(docs.split('\n').slice(1))
@@ -41,6 +41,7 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
     meta: {
       name,
       description,
+      extraDescription,
     },
   }
 }

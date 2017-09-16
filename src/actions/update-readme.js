@@ -31,8 +31,10 @@ exports = module.exports = (readme, ruleMeta, { pluginName }) => {
 exports.buildBlock = (meta, pluginName) => {
   const ruleLines = meta
     .map(
-      ({ name, description }) =>
-        `* [\`${pluginName}/${name}\`](./docs/rules/${name}.md) \u{2014} ${description}`
+      ({ name, description, extraDescription }) =>
+        `* [\`${pluginName}/${name}\`](./docs/rules/${name}.md) \u{2014} ${description}${extraDescription
+          ? ' (' + extraDescription + ')'
+          : ''}`
     )
     .join('\n')
 
