@@ -7,6 +7,8 @@
 
 > Keep your rule names and descriptions up-to-date across your repo
 
+[![NPM](https://nodei.co/npm/eslint-docs.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/eslint-docs/)
+
 ## Installation
 
 ```shellsession
