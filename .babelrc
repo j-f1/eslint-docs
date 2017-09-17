@@ -1,0 +1,14 @@
+{
+  ignore: [
+    '__mocks__',
+    '__tests__',
+    '/coverage',
+  ],
+  presets: [
+    ['env', {
+      targets: {
+        node: 4,
+      },
+    }],
+  ],
+}

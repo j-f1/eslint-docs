@@ -20,7 +20,8 @@
     "cli"
   ],
   "devDependencies": {
-    "async-to-gen": "^1.3.3",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^4.7.0",
     "eslint-config-prettier": "^2.5.0",
     "eslint-config-standard": "^10.2.1",
@@ -37,9 +38,8 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
-    "pretest": "npm run compile",
     "eslint": "eslint ./src ./bin --fix",
-    "compile": "rm -rf lib && async-to-gen --out-dir lib/ src/",
+    "compile": "rm -rf lib && babel src -d lib",
     "test": "npm run eslint && npm run jest",
     "jest": "jest"
   },
@@ -48,13 +48,11 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "rootDir": "src",
-    "transform": {
-      ".*\\.js": "async-to-gen"
-    },
     "testEnvironment": "node"
   },
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "chalk": "^2.1.0",
     "diff": "^3.3.1",
     "mz": "^2.7.0",
