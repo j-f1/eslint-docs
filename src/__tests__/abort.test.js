@@ -1,18 +1,13 @@
 const abort = require('../abort')
 const { Abort, unabort } = abort
 
-expect.extend({
-  toResolve() {
-    console.log(this, ...arguments)
-  },
-})
-
+const abortingFunction = () => abort()
 describe('abort()', () => {
   afterEach(() => {
     process.exitCode = 0
   })
   it('throws an error', () => {
-    expect(abort).toThrow(Abort)
+    expect(abortingFunction).toThrowError()
   })
   it('sets the exit code', () => {
     try {
@@ -23,7 +18,6 @@ describe('abort()', () => {
   })
 })
 
-const abortingFunction = () => abort()
 describe('unabort', () => {
   it('wraps without error', () =>
     expect(() => {
