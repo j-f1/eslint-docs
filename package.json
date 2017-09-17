@@ -38,7 +38,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
-    "eslint": "eslint ./src ./bin --fix",
+    "eslint": "eslint ./src --fix",
     "compile": "rm -rf lib && babel src -d lib",
     "test": "npm run eslint && npm run jest",
     "jest": "jest"
