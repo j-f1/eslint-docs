@@ -1,3 +1,8 @@
+# v0.1.x
+
+## v0.1.0
+Add Babel to enable support for older Node versions.
+
 # v0.0.6
 Allow specifying an `Array` for the `extraDescription` key;
 it will be `.join(', ')`ed before being added to the README.
