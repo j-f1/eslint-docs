@@ -32,9 +32,12 @@ exports.buildBlock = (meta, pluginName) => {
   const ruleLines = meta
     .map(
       ({ name, description, extraDescription }) =>
-        `* [\`${pluginName}/${name}\`](./docs/rules/${name}.md) \u{2014} ${description}${extraDescription
-          ? ' (' + extraDescription + ')'
-          : ''}`
+        `* [\`${pluginName}/${name}\`](./docs/rules/${name}.md) \u{2014} ${exports.handleDescription(
+          {
+            description,
+            extraDescription,
+          }
+        )}`
     )
     .join('\n')
 
@@ -43,4 +46,13 @@ exports.buildBlock = (meta, pluginName) => {
 ${ruleLines}
 <!-- end rule list -->
     `.trim()
+}
+
+exports.handleDescription = ({ description, extraDescription }) => {
+  if (!extraDescription) return description
+
+  if (Array.isArray(extraDescription)) {
+    extraDescription = extraDescription.join(', ')
+  }
+  return `${description} (${extraDescription})`
 }
