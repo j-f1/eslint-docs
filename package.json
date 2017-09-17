@@ -48,6 +48,9 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "rootDir": "src",
+    "setupFiles": [
+      "<rootDir>/__test_support__/setup.js"
+    ],
     "testEnvironment": "node"
   },
   "engines": {

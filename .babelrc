@@ -2,6 +2,7 @@
   ignore: [
     '__mocks__',
     '__tests__',
+    '__test_support__',
     '/coverage',
   ],
   presets: [
