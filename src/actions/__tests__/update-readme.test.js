@@ -6,10 +6,16 @@ const fakeMetadata = [
   {
     name: 'foo',
     description: 'Ensure that foo is used instead of bar',
+    extraDescription: 'Magical!',
   },
   {
     name: 'no-baz',
     description: 'Ensure that baz is not used',
+    extraDescription: ['Unicorns', '`Rainbows`'],
+  },
+  {
+    name: 'r',
+    description: 'Require your code to be super awesome!',
   },
 ]
 const fakeReadme =

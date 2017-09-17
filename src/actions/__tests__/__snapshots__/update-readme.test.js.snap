@@ -2,8 +2,9 @@
 
 exports[`buildBlock properly formats the rule metadata 1`] = `
 "<!-- begin rule list -->
-* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar (Magical!)
+* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used (Unicorns, \`Rainbows\`)
+* [\`awesome/r\`](./docs/rules/r.md) — Require your code to be super awesome!
 <!-- end rule list -->"
 `;
 
@@ -15,8 +16,9 @@ More description
 
 
 <!-- begin rule list -->
-* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar (Magical!)
+* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used (Unicorns, \`Rainbows\`)
+* [\`awesome/r\`](./docs/rules/r.md) — Require your code to be super awesome!
 <!-- end rule list -->
 "
 `;
@@ -25,8 +27,9 @@ exports[`updateReadme is case-insensitive 1`] = `
 "# ESLINT-PLUGIN-TEST
 SOME DESCRIPTION
 <!-- begin rule list -->
-* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar (Magical!)
+* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used (Unicorns, \`Rainbows\`)
+* [\`awesome/r\`](./docs/rules/r.md) — Require your code to be super awesome!
 <!-- end rule list -->
 MORE DESCRIPTION
 "
@@ -36,8 +39,9 @@ exports[`updateReadme replaces the block if it’s already present 1`] = `
 "# eslint-plugin-test
 Some description
 <!-- begin rule list -->
-* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar (Magical!)
+* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used (Unicorns, \`Rainbows\`)
+* [\`awesome/r\`](./docs/rules/r.md) — Require your code to be super awesome!
 <!-- end rule list -->
 More description
 "
