@@ -68,4 +68,10 @@ describe('readRule()', () => {
     const mockLog = console.log.mock
     expect(mockLog.calls[mockLog.calls.length - 1]).toMatchSnapshot()
   })
+
+  it('properly handles Windows-style \\r\\n newlines', () => {
+    expect(
+      runReadRule(undefined, docs.replace('\n', '\r\n')).newDocs
+    ).toMatchSnapshot()
+  })
 })

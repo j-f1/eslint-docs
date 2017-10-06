@@ -1,4 +1,5 @@
 const chalk = require('chalk')
+const { graceful: detectNewline } = require('detect-newline')
 
 const { isChecking, noDiffs } = require('../flags')
 const spinner = require('../spinner')
@@ -13,9 +14,11 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
 
   const { description, extraDescription } = rule.meta.docs
 
+  const nl = detectNewline(docs)
+
   const newDocs = [`# ${description} (${name})`]
-    .concat(docs.split('\n').slice(1))
-    .join('\n')
+    .concat(docs.split(nl).slice(1))
+    .join(nl)
 
   if (newDocs !== docs) {
     const patch = diff(friendlyDocPath, 'generated', docs, newDocs)

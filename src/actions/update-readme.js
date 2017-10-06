@@ -1,3 +1,5 @@
+const { graceful: detectNewline } = require('detect-newline')
+
 const { isChecking } = require('../flags')
 
 const spinner = require('../spinner')
@@ -7,7 +9,8 @@ const abort = require('../abort')
 const targetRe = /^<!-- begin rule list -->[\s\S]+<!-- end rule list -->$/im
 
 exports = module.exports = (readme, ruleMeta, { pluginName }) => {
-  const ruleBlock = exports.buildBlock(ruleMeta, pluginName)
+  const nl = detectNewline(readme)
+  const ruleBlock = exports.buildBlock(ruleMeta, pluginName, nl)
 
   let updatedReadme
   if (targetRe.test(readme)) {
@@ -21,14 +24,14 @@ exports = module.exports = (readme, ruleMeta, { pluginName }) => {
       abort()
     } else {
       spinner.warn(message)
-      updatedReadme = `${readme}\n\n${ruleBlock}\n`
+      updatedReadme = `${readme}${nl}${nl}${ruleBlock}${nl}`
     }
   }
 
   return updatedReadme
 }
 
-exports.buildBlock = (meta, pluginName) => {
+exports.buildBlock = (meta, pluginName, nl = '\n') => {
   const ruleLines = meta
     .map(
       ({ name, description, extraDescription }) =>
@@ -39,12 +42,9 @@ exports.buildBlock = (meta, pluginName) => {
           }
         )}`
     )
-    .join('\n')
+    .join(nl)
 
-  return `
-<!-- begin rule list -->
-${ruleLines}
-<!-- end rule list -->
+  return `<!-- begin rule list -->${nl}${ruleLines}${nl}<!-- end rule list -->
     `.trim()
 }
 

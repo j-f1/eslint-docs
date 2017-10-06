@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`readRule() properly handles Windows-style \\r\\n newlines 1`] = `
+"# Require that the file be empty (require-empty)
+
+This rule ensures great productivity by requiring that
+all files you write are completely empty.
+"
+`;
+
 exports[`readRule() updates the docs if needed 1`] = `
 Array [
   "  --- docs/rules/require-empty
