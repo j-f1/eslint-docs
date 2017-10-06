@@ -48,9 +48,6 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "rootDir": "src",
-    "setupFiles": [
-      "<rootDir>/__test_support__/setup.js"
-    ],
     "testEnvironment": "node"
   },
   "engines": {
@@ -58,7 +55,6 @@
   },
   "license": "ISC",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "chalk": "^2.1.0",
     "detect-newline": "^2.1.0",
     "diff": "^3.3.1",

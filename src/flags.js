@@ -1,10 +1,10 @@
 const argv = process.argv.slice(2)
 
 const parse = (args = argv) => {
-  const isChecking = args.includes('check')
+  const isChecking = args.indexOf('check') !== -1
   const verb = exports.isChecking ? 'Checking' : 'Updating'
 
-  const noDiffs = args.includes('--no-diffs')
+  const noDiffs = args.indexOf('--no-diffs') !== -1
 
   const extArg = args.find(arg => arg.startsWith('--ext'))
   let ext = '.js'

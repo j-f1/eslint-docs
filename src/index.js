@@ -1,9 +1,5 @@
 'use strict'
 
-// Babel Polyfill for old Node
-require('babel-polyfill') // magic!
-// End polyfill
-
 const fs = require('mz/fs')
 const path = require('path')
 
