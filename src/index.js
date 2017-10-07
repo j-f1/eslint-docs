@@ -1,5 +1,8 @@
 'use strict'
 
+// `async function() {}` polyfill
+require('regenerator-runtime/runtime')
+
 const fs = require('mz/fs')
 const path = require('path')
 
