@@ -1,6 +1,9 @@
 # v0.1.x
 
-## v0.1.2
+## v0.1.3
+🐛 install `regenerator-runtime` for `async function` support
+
+## v0.1.2 (💀)
 * Use the documentation file’s predominant newline style when inserting newlines ([#7])
 * Remove `babel-polyfill` and fix the tests on Node v4
 
