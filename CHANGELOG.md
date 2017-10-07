@@ -1,5 +1,14 @@
 # v0.1.x
 
+## v0.1.2
+* Use the documentation file’s predominant newline style when inserting newlines ([#7])
+* Remove `babel-polyfill` and fix the tests on Node v4
+
+[#7]: https://github.com/j-f1/eslint-docs/issues/7
+
+## v0.1.1
+Properly support the CLI on older versions of Node
+
 ## v0.1.0
 Add Babel to enable support for older Node versions.
 
