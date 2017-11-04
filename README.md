@@ -11,7 +11,7 @@
 
 ## Installation
 
-```shellsession
+```console
 $ npm install --save-dev eslint-docs
 ```
 
@@ -19,7 +19,7 @@ $ npm install --save-dev eslint-docs
 
 In the shell
 
-```shellsession
+```console
 $ eslint-docs
 ✔ docs/rules/no-insecure-random.md is up-to-date
 ✔ docs/rules/no-stateless-class.md is up-to-date
