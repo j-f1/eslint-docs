@@ -34,8 +34,9 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
 
   for (const rulePath of rulePaths) {
     spinner.start(
-      `${verb} rule ${rulePaths.indexOf(rulePath) +
-        1} of ${rulePaths.length}...`
+      `${verb} rule ${rulePaths.indexOf(rulePath) + 1} of ${
+        rulePaths.length
+      }...`
     )
 
     const rule = require(rulePath)
