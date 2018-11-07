@@ -34,7 +34,7 @@
     "jest": "^22.1.4",
     "jest-cli": "^22.1.4",
     "nsp": "^3.2.1",
-    "prettier": "1.14.3"
+    "prettier": "1.15.0"
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
