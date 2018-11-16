@@ -61,6 +61,6 @@
     "mz": "^2.7.0",
     "ora": "^3.0.0",
     "read-pkg-up": "^4.0.0",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.13.0"
   }
 }
