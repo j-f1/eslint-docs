@@ -34,12 +34,13 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "nsp": "^3.2.1",
-    "prettier": "1.15.3"
+    "prettier": "1.15.3",
+    "rimraf": "^2.6.2"
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
     "eslint": "eslint ./src --fix",
-    "compile": "rm -rf lib && babel src -d lib",
+    "compile": "rimraf lib && babel src -d lib",
     "test": "npm run eslint && npm run jest",
     "jest": "jest"
   },
