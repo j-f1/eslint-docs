@@ -7,6 +7,7 @@ const fakeMetadata = [
     name: 'foo',
     description: 'Ensure that foo is used instead of bar',
     extraDescription: 'Magical!',
+    recommended: true,
   },
   {
     name: 'no-baz',
@@ -16,6 +17,7 @@ const fakeMetadata = [
   {
     name: 'r',
     description: 'Require your code to be super awesome!',
+    fixable: 'code',
   },
 ]
 const fakeReadme =
@@ -23,8 +25,10 @@ const fakeReadme =
 # eslint-plugin-test
 Some description
 <!-- begin rule list -->
-* [\`awesome/foo\`](./docs/rules/foo.md) — Ensure that foo is used instead of bar
-* [\`awesome/no-baz\`](./docs/rules/no-baz.md) — Ensure that baz is not used
+| Name | Description | :heavy_check_mark: | :wrench: |
+| ----- | ----- | ----- | ----- |
+| [awesome/foo](./docs/rules/foo.md) | Ensure that foo is used instead of bar | :heavy_check_mark: | |
+| [awesome/no-baz](./docs/rules/no-baz.md) | Ensure that baz is not used | | |
 <!-- end rule list -->
 More description
 `.trim() + '\n'

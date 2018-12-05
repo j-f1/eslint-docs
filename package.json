@@ -27,14 +27,14 @@
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-markdown": "^1.0.0-beta.8",
-    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "jest": "^22.1.4",
-    "jest-cli": "^22.1.4",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "nsp": "^3.2.1",
-    "prettier": "1.14.3"
+    "prettier": "1.15.3"
   },
   "scripts": {
     "prepublishOnly": "npm run compile && nsp check",
@@ -61,6 +61,6 @@
     "mz": "^2.7.0",
     "ora": "^3.0.0",
     "read-pkg-up": "^4.0.0",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.13.1"
   }
 }
