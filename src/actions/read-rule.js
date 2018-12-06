@@ -12,7 +12,8 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
     abort()
   }
 
-  const { description, extraDescription } = rule.meta.docs
+  const fixable = rule.meta.fixable
+  const { description, extraDescription, recommended } = rule.meta.docs
 
   const nl = detectNewline(docs)
 
@@ -45,6 +46,8 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
       name,
       description,
       extraDescription,
+      recommended,
+      fixable,
     },
   }
 }
