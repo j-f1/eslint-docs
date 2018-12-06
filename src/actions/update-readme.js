@@ -32,13 +32,10 @@ exports = module.exports = (readme, ruleMeta, { pluginName }) => {
 }
 
 exports.buildBlock = (meta, pluginName, nl = '\n') => {
-  const header = '| Name | Description | :heavy_check_mark: | :wrench: |'
-  const delimiter = '| ----- | ----- | ----- | ----- |'
-
   const rulesTable = meta
     .map(
       ({ name, description, extraDescription, recommended, fixable }) =>
-        `| [${pluginName}/${name}](./docs/rules/${name}.md) | ${exports.handleDescription(
+        `| [\`${pluginName}/${name}\`](./docs/rules/${name}.md) | ${exports.handleDescription(
           {
             description,
             extraDescription,
@@ -49,7 +46,16 @@ exports.buildBlock = (meta, pluginName, nl = '\n') => {
     )
     .join(nl)
 
-  return `<!-- begin rule list -->${nl}${header}${nl}${delimiter}${nl}${rulesTable}${nl}<!-- end rule list -->`.trim()
+  return `
+<!-- begin rule list -->
+**Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+| Name | Description | :heavy_check_mark: | :wrench: |
+| ---- | ----------- | ------------------ | -------- |
+${rulesTable}
+<!-- end rule list -->
+  `
+    .trim()
+    .replace(/\n/g, nl)
 }
 
 exports.handleDescription = ({ description, extraDescription }) => {

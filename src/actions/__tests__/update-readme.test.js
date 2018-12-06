@@ -25,8 +25,9 @@ const fakeReadme =
 # eslint-plugin-test
 Some description
 <!-- begin rule list -->
+**Key**: :heavy_check_mark: = recommended, :wrench: = fixable
 | Name | Description | :heavy_check_mark: | :wrench: |
-| ----- | ----- | ----- | ----- |
+| ---- | ----------- | ------------------ | -------- |
 | [awesome/foo](./docs/rules/foo.md) | Ensure that foo is used instead of bar | :heavy_check_mark: | |
 | [awesome/no-baz](./docs/rules/no-baz.md) | Ensure that baz is not used | | |
 <!-- end rule list -->
