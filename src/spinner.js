@@ -1,3 +1,4 @@
 const ora = require('ora')
 
-module.exports = ora('Initializing...').start()
+const spinner = (module.exports = ora('Initializing...'))
+if (process.stdout.isTTY) spinner.start()

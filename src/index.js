@@ -17,11 +17,12 @@ const readRule = require('./actions/read-rule')
 const updateReadme = require('./actions/update-readme')
 
 module.exports = unabort(async (projectRoot = defaultRoot) => {
+  const { isTTY } = process.stdout
   const project = register(await projectRoot)
   const { rulesDir, readmePath, docsDir } = project
   projectRoot = project.projectRoot
 
-  spinner.start('Reading rules...')
+  if (isTTY) spinner.start('Reading rules...')
 
   const rulePaths = (await fs.readdir(rulesDir)).map(name =>
     path.resolve(rulesDir, name)
@@ -30,11 +31,12 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
   const ruleMeta = []
 
   for (const rulePath of rulePaths) {
-    spinner.start(
-      `${verb} rule ${rulePaths.indexOf(rulePath) + 1} of ${
-        rulePaths.length
-      }...`
-    )
+    if (isTTY)
+      spinner.start(
+        `${verb} rule ${rulePaths.indexOf(rulePath) + 1} of ${
+          rulePaths.length
+        }...`
+      )
 
     const rule = require(rulePath)
 
@@ -66,7 +68,7 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
     }
   }
 
-  spinner.start(`${verb} README...`)
+  if (isTTY) spinner.start(`${verb} README...`)
   const readme = await read(null, `Could not read the README`, readmePath)
 
   const updatedReadme = updateReadme(readme, ruleMeta, project)
