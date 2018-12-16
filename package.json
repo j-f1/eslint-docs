@@ -33,12 +33,11 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
-    "nsp": "^3.2.1",
     "prettier": "1.15.3",
     "rimraf": "^2.6.2"
   },
   "scripts": {
-    "prepublishOnly": "npm run compile && nsp check",
+    "prepublishOnly": "npm run compile",
     "eslint": "eslint ./src --fix",
     "compile": "rimraf lib && babel src -d lib",
     "test": "npm run eslint && npm run jest",
