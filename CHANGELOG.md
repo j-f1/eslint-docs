@@ -1,5 +1,8 @@
 # v0.2.x
 
+## v0.2.7
+Less output in CI
+
 ## v0.2.6
 Tell [Prettier](https://prettier.io) to ignore the table in the README
 
