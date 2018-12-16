@@ -1,3 +1,10 @@
+# v0.2.x
+
+## v0.2.0
+
+* Update style in README to be a table (**breaking**)
+* Upgrade dependencies
+
 # v0.1.x
 
 ## v0.1.3
