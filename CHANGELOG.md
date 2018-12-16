@@ -1,8 +1,11 @@
 # v0.2.x
 
+## v0.2.4
+
+Tell [Prettier](https://prettier.io) to ignore the table in the README
+
 ## v0.2.3
 🐛 Fix table output
-
 
 ## v0.2.2
 ## v0.2.1
