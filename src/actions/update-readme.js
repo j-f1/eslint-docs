@@ -49,6 +49,7 @@ exports.buildBlock = (meta, pluginName, nl = '\n') => {
   return `
 <!-- begin rule list -->
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 ${rulesTable}

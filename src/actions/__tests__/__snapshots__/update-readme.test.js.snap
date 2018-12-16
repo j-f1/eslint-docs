@@ -3,6 +3,7 @@
 exports[`buildBlock properly formats the rule metadata 1`] = `
 "<!-- begin rule list -->
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 | [\`awesome/foo\`](./docs/rules/foo.md) | Ensure that foo is used instead of bar (Magical!) | :heavy_check_mark: |  |
@@ -20,6 +21,7 @@ More description
 
 <!-- begin rule list -->
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 | [\`awesome/foo\`](./docs/rules/foo.md) | Ensure that foo is used instead of bar (Magical!) | :heavy_check_mark: |  |
@@ -34,6 +36,7 @@ exports[`updateReadme is case-insensitive 1`] = `
 SOME DESCRIPTION
 <!-- begin rule list -->
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 | [\`awesome/foo\`](./docs/rules/foo.md) | Ensure that foo is used instead of bar (Magical!) | :heavy_check_mark: |  |
@@ -49,6 +52,7 @@ exports[`updateReadme replaces the block if it’s already present 1`] = `
 Some description
 <!-- begin rule list -->
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
+
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 | [\`awesome/foo\`](./docs/rules/foo.md) | Ensure that foo is used instead of bar (Magical!) | :heavy_check_mark: |  |

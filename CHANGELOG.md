@@ -1,5 +1,8 @@
 # v0.2.x
 
+## v0.2.1
+🐛 Fix table output
+
 ## v0.2.0
 
 * Update style in README to be a table (**breaking**)
