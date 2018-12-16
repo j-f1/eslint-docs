@@ -48,11 +48,14 @@ exports.buildBlock = (meta, pluginName, nl = '\n') => {
 
   return `
 <!-- begin rule list -->
+
 **Key**: :heavy_check_mark: = recommended, :wrench: = fixable
 
+<!-- prettier-ignore -->
 | Name | Description | :heavy_check_mark: | :wrench: |
 | ---- | ----------- | ------------------ | -------- |
 ${rulesTable}
+
 <!-- end rule list -->
   `
     .trim()
