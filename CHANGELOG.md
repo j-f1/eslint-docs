@@ -1,7 +1,12 @@
 # v0.2.x
 
-## v0.2.1
+## v0.2.3
 🐛 Fix table output
+
+
+## v0.2.2
+## v0.2.1
+*not published due to error*
 
 ## v0.2.0
 
