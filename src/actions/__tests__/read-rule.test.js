@@ -74,4 +74,45 @@ describe('readRule()', () => {
       runReadRule(undefined, docs.replace('\n', '\r\n')).newDocs
     ).toMatchSnapshot()
   })
+
+  it('mixed windows and unix newlines', () => {
+    const docs = `# ${description} (${name})\nSome random test:\r\n\r\n`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(docs)
+  })
+
+  it('whitespaces before heading', () => {
+    const docs = `\n\n\n\n\r\n# ${description} (${name})\n`
+    const outputDocs = `# ${description} (${name})\n`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
+  })
+
+  it('non string text before heading', () => {
+    const docs = `\nTest\n`
+    const outputDocs = `# ${description} (${name})\n\nTest\n`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
+  })
+
+  it('non string text before heading without new line', () => {
+    const docs = `Test\n`
+    const outputDocs = `# ${description} (${name})\nTest\n`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
+  })
+
+  it('single line heading', () => {
+    const docs = `# Test`
+    const outputDocs = `# ${description} (${name})`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
+  })
+
+  it('empty file', () => {
+    const docs = ``
+    const outputDocs = `# ${description} (${name})\n`
+
+    expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
+  })
 })
