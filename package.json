@@ -38,9 +38,10 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile",
-    "fix": "yarn eslint --fix",
+    "lint": "eslint src",
+    "fix": "yarn lint --fix",
     "compile": "rimraf lib && babel src -d lib",
-    "lint": "yarn eslint && yarn jest"
+    "lint": "yarn lint && yarn jest"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
