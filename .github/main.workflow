@@ -20,5 +20,5 @@ action "Test" {
 action "Lint" {
   uses = "CultureHQ/actions-yarn@master"
   needs = ["Install Dependencies"]
-  args = ["eslint"]
+  args = ["lint"]
 }
