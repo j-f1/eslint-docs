@@ -15,11 +15,13 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
   const fixable = rule.meta.fixable
   const { description, extraDescription, recommended } = rule.meta.docs
 
-  const nl = detectNewline(docs)
+  const heading = `# ${description} (${name})`
 
-  const newDocs = [`# ${description} (${name})`]
-    .concat(docs.split(nl).slice(1))
-    .join(nl)
+  const headingRe = /^\s*#[^\r\n]*(\r?\n)?/
+
+  const newDocs = headingRe.test(docs)
+    ? docs.replace(headingRe, heading + `$1`)
+    : `${heading}${detectNewline(docs)}${docs}`
 
   if (newDocs !== docs) {
     const patch = diff(friendlyDocPath, 'generated', docs, newDocs)
