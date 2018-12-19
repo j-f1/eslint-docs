@@ -76,34 +76,34 @@ describe('readRule()', () => {
     ).toMatchSnapshot()
   })
 
-  it('mixed windows and unix newlines', () => {
+  it('properly handles mixed Windows and Unix newlines', () => {
     const docs = `${heading}\nSome random test:\r\n\r\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(docs)
   })
 
-  it('whitespaces before heading', () => {
+  it('properly handles multiple newlines before heading', () => {
     const docs = `\n\n\n\n\r\n${heading}\n`
     const outputDocs = `${heading}\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
-  it('non string text before heading', () => {
+  it('properly handles non heading text with new line', () => {
     const docs = `\nTest\n`
     const outputDocs = `${heading}\n\nTest\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
-  it('non string text before heading without new line', () => {
+  it('properly handles non heading text without new line', () => {
     const docs = `Test\n`
     const outputDocs = `${heading}\nTest\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
-  it('single line heading', () => {
+  it('properly handles an single line heading', () => {
     const docs = `# Test`
     const outputDocs = `${heading}`
 
