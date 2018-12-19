@@ -5,7 +5,7 @@ workflow "Run tests" {
 
 action "Install Dependencies" {
   uses = "CultureHQ/actions-yarn@master"
-  args = []
+  args = ["install"]
 }
 
 action "Test" {
