@@ -1,6 +1,9 @@
 workflow "Run tests" {
   on = "push"
-  resolves = ["Test"]
+  resolves = [
+    "Test",
+    "Lint",
+  ]
 }
 
 action "Install Dependencies" {
@@ -12,4 +15,10 @@ action "Test" {
   uses = "CultureHQ/actions-yarn@master"
   needs = ["Install Dependencies"]
   args = ["jest"]
+}
+
+action "Lint" {
+  uses = "CultureHQ/actions-yarn@master"
+  needs = ["Install Dependencies"]
+  args = ["eslint"]
 }
