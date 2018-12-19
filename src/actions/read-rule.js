@@ -17,10 +17,10 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
 
   const heading = `# ${description} (${name})`
 
-  const regTest = /^\s*#[^\r\n]*(\r?\n)?/
+  const headingRe = /^\s*#[^\r\n]*(\r?\n)?/
 
-  const newDocs = regTest.test(docs)
-    ? docs.replace(regTest, heading + `$1`)
+  const newDocs = headingRe.test(docs)
+    ? docs.replace(headingRe, heading + `$1`)
     : `${heading}${detectNewline(docs)}${docs}`
 
   if (newDocs !== docs) {

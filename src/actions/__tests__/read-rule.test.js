@@ -9,9 +9,10 @@ const readRule = require('../../actions/read-rule')
 
 const description = 'Require that the file be empty'
 const name = 'require-empty'
+const heading = `# ${description} (${name})`
 const docs =
   `
-# ${description} (${name})
+${heading}
 
 This rule ensures great productivity by requiring that
 all files you write are completely empty.
@@ -76,42 +77,42 @@ describe('readRule()', () => {
   })
 
   it('mixed windows and unix newlines', () => {
-    const docs = `# ${description} (${name})\nSome random test:\r\n\r\n`
+    const docs = `${heading}\nSome random test:\r\n\r\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(docs)
   })
 
   it('whitespaces before heading', () => {
-    const docs = `\n\n\n\n\r\n# ${description} (${name})\n`
-    const outputDocs = `# ${description} (${name})\n`
+    const docs = `\n\n\n\n\r\n${heading}\n`
+    const outputDocs = `${heading}\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
   it('non string text before heading', () => {
     const docs = `\nTest\n`
-    const outputDocs = `# ${description} (${name})\n\nTest\n`
+    const outputDocs = `${heading}\n\nTest\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
   it('non string text before heading without new line', () => {
     const docs = `Test\n`
-    const outputDocs = `# ${description} (${name})\nTest\n`
+    const outputDocs = `${heading}\nTest\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
   it('single line heading', () => {
     const docs = `# Test`
-    const outputDocs = `# ${description} (${name})`
+    const outputDocs = `${heading}`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
 
-  it('empty file', () => {
+  it('handles an empty file properly', () => {
     const docs = ``
-    const outputDocs = `# ${description} (${name})\n`
+    const outputDocs = `${heading}\n`
 
     expect(runReadRule(undefined, docs).newDocs).toBe(outputDocs)
   })
