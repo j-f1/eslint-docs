@@ -38,10 +38,9 @@
   },
   "scripts": {
     "prepublishOnly": "npm run compile",
-    "eslint": "eslint ./src --fix",
+    "fix": "yarn eslint --fix",
     "compile": "rimraf lib && babel src -d lib",
-    "test": "npm run eslint && npm run jest",
-    "jest": "jest"
+    "lint": "yarn eslint && yarn jest"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
