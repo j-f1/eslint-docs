@@ -41,7 +41,7 @@
     "lint": "eslint src",
     "fix": "yarn lint --fix",
     "compile": "rimraf lib && babel src -d lib",
-    "lint": "yarn lint && yarn jest"
+    "test": "yarn lint && yarn jest"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
