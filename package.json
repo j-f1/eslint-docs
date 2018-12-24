@@ -56,8 +56,9 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
+    "cli-diff": "^1.0.0",
     "detect-newline": "^2.1.0",
-    "diff": "^3.5.0",
+    "indent-string": "^3.2.0",
     "mz": "^2.7.0",
     "ora": "^3.0.0",
     "read-pkg-up": "^4.0.0"

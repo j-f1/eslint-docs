@@ -74,7 +74,10 @@ module.exports = unabort(async (projectRoot = defaultRoot) => {
   const updatedReadme = updateReadme(readme, ruleMeta, project)
 
   if (updatedReadme !== readme) {
-    const patch = diff('README.md', 'generated', readme, updatedReadme)
+    const patch = diff(
+      { name: 'README.md', content: readme },
+      { name: 'generated', content: updatedReadme }
+    )
     if (isChecking) {
       spinner.fail('The README is not correctly formatted. Please update it:')
       if (!noDiffs) console.error(patch)

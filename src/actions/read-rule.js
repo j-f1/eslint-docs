@@ -24,7 +24,10 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
     : `${heading}${detectNewline(docs)}${docs}`
 
   if (newDocs !== docs) {
-    const patch = diff(friendlyDocPath, 'generated', docs, newDocs)
+    const patch = diff(
+      { name: friendlyDocPath, content: docs },
+      { name: 'generated', content: newDocs }
+    )
     if (isChecking) {
       spinner.fail(
         `The description for ${chalk.bold(
