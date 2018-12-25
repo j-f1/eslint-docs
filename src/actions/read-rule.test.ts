@@ -1,6 +1,6 @@
-import spinner from '../../spinner'
+import spinner from '../spinner'
 
-import readRule from '../read-rule'
+import readRule from './read-rule'
 
 import chalk from 'chalk'
 chalk.enabled = false
