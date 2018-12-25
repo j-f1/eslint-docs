@@ -1,15 +1,34 @@
-const chalk = require('chalk')
-const { graceful: detectNewline } = require('detect-newline')
+import chalk from 'chalk'
+import { graceful as detectNewline } from 'detect-newline'
 
-const { isChecking, noDiffs } = require('../flags')
-const spinner = require('../spinner')
-const abort = require('../abort')
-const diff = require('../diff')
+import { isChecking, noDiffs } from '../flags'
+import spinner from '../spinner'
+import abort from '../abort'
+import diff from '../diff'
 
-module.exports = ({ rule, docs, friendlyDocPath }, name) => {
+interface Options {
+  rule: import('eslint').Rule.RuleModule & {
+    meta: { docs: { extraDescription?: string | string[] } }
+  }
+  docs: string
+  friendlyDocPath: string
+}
+
+export interface RuleMeta {
+  name: string
+  description: string
+  extraDescription?: string | string[]
+  recommended?: boolean
+  fixable?: 'whitespace' | 'code'
+}
+
+export default (
+  { rule, docs, friendlyDocPath }: Options,
+  name: string
+): { newDocs: string; meta: RuleMeta } => {
   if (!rule || !rule.meta || !rule.meta.docs || !rule.meta.docs.description) {
     spinner.fail(`Rule ${name} does not have a description`)
-    abort()
+    return abort()
   }
 
   const fixable = rule.meta.fixable
@@ -30,7 +49,7 @@ module.exports = ({ rule, docs, friendlyDocPath }, name) => {
     )
     if (isChecking) {
       spinner.fail(
-        `The description for ${chalk.bold(
+        chalk`The description for ${chalk.bold(
           name
         )} must match the required format:`
       )

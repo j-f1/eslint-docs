@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const chalk = require('chalk')
+import chalk from 'chalk'
 
-const { unabort } = require('../lib/abort')
-const spinner = require('../lib/spinner')
+import { unabort } from './abort'
+import spinner from './spinner'
 
-const run = require('../lib')
+import run from './'
 
 unabort(run)()
   .catch(err => {

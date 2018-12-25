@@ -1,5 +1,4 @@
-const abort = require('../abort')
-const { Abort, unabort } = abort
+import abort, { Abort, unabort } from '../abort'
 
 const abortingFunction = () => abort()
 describe('abort()', () => {

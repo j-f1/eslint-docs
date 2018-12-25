@@ -1,15 +1,15 @@
-const mock = {}
+const mock: any = {}
 
 'start warn fail succeed info'.split(' ').map(k => {
   mock[k] = jest.fn()
 })
 
-exports = module.exports = mock
+export default mock
 
-exports.console = console
+export const console = global.console
 global.console = {
   log: jest.fn(),
   warn: jest.fn(),
   error: jest.fn(),
   info: jest.fn(),
-}
+} as any

@@ -1,6 +1,6 @@
 const argv = process.argv.slice(2)
 
-const parse = (args = argv) => {
+export const parse = (args = argv) => {
   const isChecking = args.indexOf('check') !== -1
   const verb = exports.isChecking ? 'Checking' : 'Updating'
 
@@ -26,8 +26,9 @@ const parse = (args = argv) => {
     isChecking,
     verb,
     ext,
-    parse,
   }
 }
 
-exports = module.exports = parse()
+const { args, noDiffs, isChecking, verb, ext } = parse()
+
+export { args, noDiffs, isChecking, verb, ext }

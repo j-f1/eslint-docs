@@ -1,16 +1,22 @@
-const { graceful: detectNewline } = require('detect-newline')
+import { graceful as detectNewline } from 'detect-newline'
 
-const { isChecking } = require('../flags')
+import { RuleMeta } from './read-rule'
 
-const spinner = require('../spinner')
+import { isChecking } from '../flags'
 
-const abort = require('../abort')
+import spinner from '../spinner'
+
+import abort from '../abort'
 
 const targetRe = /^<!-- begin rule list -->[\s\S]+<!-- end rule list -->$/im
 
-exports = module.exports = (readme, ruleMeta, { pluginName }) => {
+export default (
+  readme: string,
+  ruleMeta: RuleMeta[],
+  { pluginName }: { pluginName: string }
+): string => {
   const nl = detectNewline(readme)
-  const ruleBlock = exports.buildBlock(ruleMeta, pluginName, nl)
+  const ruleBlock = buildBlock(ruleMeta, pluginName, nl)
 
   let updatedReadme
   if (targetRe.test(readme)) {
@@ -21,7 +27,7 @@ exports = module.exports = (readme, ruleMeta, { pluginName }) => {
     // istanbul ignore next
     if (isChecking) {
       spinner.fail(message)
-      abort()
+      return abort()
     } else {
       spinner.warn(message)
       updatedReadme = `${readme}${nl}${nl}${ruleBlock}${nl}`
@@ -31,11 +37,11 @@ exports = module.exports = (readme, ruleMeta, { pluginName }) => {
   return updatedReadme
 }
 
-exports.buildBlock = (meta, pluginName, nl = '\n') => {
+export function buildBlock(meta: RuleMeta[], pluginName: string, nl = '\n') {
   const rulesTable = meta
     .map(
       ({ name, description, extraDescription, recommended, fixable }) =>
-        `| [\`${pluginName}/${name}\`](./docs/rules/${name}.md) | ${exports.handleDescription(
+        `| [\`${pluginName}/${name}\`](./docs/rules/${name}.md) | ${handleDescription(
           {
             description,
             extraDescription,
@@ -62,7 +68,10 @@ ${rulesTable}
     .replace(/\n/g, nl)
 }
 
-exports.handleDescription = ({ description, extraDescription }) => {
+export function handleDescription({
+  description,
+  extraDescription,
+}: Pick<RuleMeta, 'description' | 'extraDescription'>) {
   if (!extraDescription) return description
 
   if (Array.isArray(extraDescription)) {

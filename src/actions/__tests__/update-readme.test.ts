@@ -1,8 +1,10 @@
+import { RuleMeta } from '../read-rule'
+
+import updateReadme, { buildBlock } from '../update-readme'
+
 jest.mock('../../spinner')
 
-const updateReadme = require('../../actions/update-readme')
-
-const fakeMetadata = [
+const fakeMetadata: RuleMeta[] = [
   {
     name: 'foo',
     description: 'Ensure that foo is used instead of bar',
@@ -38,7 +40,7 @@ const pluginName = 'awesome'
 const project = { pluginName }
 describe('buildBlock', () => {
   it('properly formats the rule metadata', () => {
-    expect(updateReadme.buildBlock(fakeMetadata, pluginName)).toMatchSnapshot()
+    expect(buildBlock(fakeMetadata, pluginName)).toMatchSnapshot()
   })
 })
 describe('updateReadme', () => {

@@ -10,14 +10,14 @@ all files you write are completely empty.
 
 exports[`readRule() updates the docs if needed 1`] = `
 Array [
-  "  --- docs/rules/require-empty
-  +++ generated
+  "  --- docs/rules/require-empty	
+  +++ generated	
   @@ -1,4 +1,4 @@
   -# ***Require that the file be empty (require-empty)
   +# Require that the file be empty (require-empty)
-   
+ 
    This rule ensures great productivity by requiring that
    all files you write are completely empty.
-  ",
+",
 ]
 `;

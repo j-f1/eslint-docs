@@ -1,7 +1,7 @@
-const { parse } = require('../flags')
+import { parse } from '../flags'
 
-const checkArgs = args => expect(parse(args)).toMatchSnapshot()
-const dropArgs = parsed => {
+const checkArgs = (args: string[]) => expect(parse(args)).toMatchSnapshot()
+const dropArgs = (parsed: ReturnType<typeof parse>) => {
   delete parsed.args
   return parsed
 }

@@ -1,13 +1,26 @@
 root: true
+parser: eslint-plugin-typescript/parser
 plugins:
   - prettier
   - markdown
+  - typescript
 
 extends:
   - standard
   - plugin:prettier/recommended
+  - plugin:typescript/recommended
 
 rules:
+  typescript/indent: off
+  typescript/explicit-function-return-type: off
+  typescript/no-use-before-define: off
+  typescript/no-explicit-any: off
+  typescript/no-unused-vars: off
+  typescript/member-delimiter-style: off
+  typescript/no-var-requires: off
+  typescript/array-type:
+    - error
+    - array-simple
 
 env:
   jest: true

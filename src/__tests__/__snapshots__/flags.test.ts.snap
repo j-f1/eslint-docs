@@ -8,7 +8,6 @@ Object {
   "ext": ".js",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -22,7 +21,6 @@ Object {
   "ext": ".js",
   "isChecking": true,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -33,7 +31,6 @@ Object {
   "ext": ".js",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -46,7 +43,6 @@ Object {
   "ext": ".js",
   "isChecking": true,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -60,7 +56,6 @@ Object {
   "ext": ".ts",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -74,7 +69,6 @@ Object {
   "ext": ".ts",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -87,7 +81,6 @@ Object {
   "ext": ".ts",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -100,7 +93,6 @@ Object {
   "ext": ".ts",
   "isChecking": false,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -113,7 +105,6 @@ Object {
   "ext": ".js",
   "isChecking": false,
   "noDiffs": true,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -128,7 +119,6 @@ Object {
   "ext": ".js",
   "isChecking": true,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;
@@ -142,7 +132,6 @@ Object {
   "ext": ".js",
   "isChecking": true,
   "noDiffs": false,
-  "parse": [Function],
   "verb": "Updating",
 }
 `;

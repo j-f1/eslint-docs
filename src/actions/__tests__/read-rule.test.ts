@@ -1,12 +1,11 @@
-jest.mock('../../spinner')
+import spinner from '../../spinner'
 
-const spinner = require('../../spinner')
+import readRule from '../read-rule'
 
-const chalk = require('chalk')
+import chalk from 'chalk'
 chalk.enabled = false
 
-const readRule = require('../../actions/read-rule')
-
+jest.mock('../../spinner')
 const description = 'Require that the file be empty'
 const name = 'require-empty'
 const heading = `# ${description} (${name})`
@@ -21,7 +20,7 @@ all files you write are completely empty.
 const friendlyDocPath = `docs/rules/${chalk.bold(name)}`
 
 const runReadRule = (
-  rule = {
+  rule: any = {
     meta: {
       docs: { description },
     },
@@ -66,7 +65,7 @@ describe('readRule()', () => {
       `Updating the docs for ${chalk.bold(name)}:`
     )
 
-    const mockLog = console.log.mock
+    const mockLog = (console.log as any).mock
     expect(mockLog.calls[mockLog.calls.length - 1]).toMatchSnapshot()
   })
 
