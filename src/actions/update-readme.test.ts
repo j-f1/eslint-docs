@@ -2,7 +2,7 @@ import { RuleMeta } from './read-rule'
 
 import updateReadme, { buildBlock } from './update-readme'
 
-jest.mock('../../spinner')
+jest.mock('../spinner')
 
 const fakeMetadata: RuleMeta[] = [
   {

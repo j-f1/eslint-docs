@@ -5,7 +5,7 @@ import readRule from './read-rule'
 import chalk from 'chalk'
 chalk.enabled = false
 
-jest.mock('../../spinner')
+jest.mock('../spinner')
 const description = 'Require that the file be empty'
 const name = 'require-empty'
 const heading = `# ${description} (${name})`
