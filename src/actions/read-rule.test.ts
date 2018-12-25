@@ -17,7 +17,7 @@ This rule ensures great productivity by requiring that
 all files you write are completely empty.
   `.trim() + '\n'
 
-const friendlyDocPath = `docs/rules/${chalk.bold(name)}`
+const friendlyDocPath = chalk`docs/rules/{bold ${name}}`
 
 const runReadRule = (
   rule: any = {

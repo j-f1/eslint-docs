@@ -49,14 +49,12 @@ export default (
     )
     if (isChecking) {
       spinner.fail(
-        chalk`The description for ${chalk.bold(
-          name
-        )} must match the required format:`
+        chalk`The description for {bold ${name}} must match the required format:`
       )
       if (!noDiffs) console.error(patch)
       process.exitCode = 1
     } else {
-      spinner.info(`Updating the docs for ${chalk.bold(name)}:`)
+      spinner.info(chalk`Updating the docs for {bold ${name}}:`)
       if (!noDiffs) console.log(patch)
     }
   }

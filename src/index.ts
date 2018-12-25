@@ -50,7 +50,7 @@ export default unabort(
 
       const docs = await read(
         null,
-        `Could not read the docs for ${chalk.bold(name)} at ${friendlyDocPath}`,
+        chalk`Could not read the docs for {bold ${name}} at ${friendlyDocPath}`,
         docPath
       )
       if (docs) {
@@ -62,9 +62,7 @@ export default unabort(
         if (!isChecking) {
           await write(
             `${friendlyDocPath} is up-to-date`,
-            `Could not update the docs for ${chalk.bold(
-              name
-            )} at ${friendlyDocPath}`,
+            `Could not update the docs for {bold ${name}} at ${friendlyDocPath}`,
             docPath,
             newDocs
           )
