@@ -1,4 +1,4 @@
-import abort, { Abort, unabort } from '../abort'
+import abort, { Abort, unabort } from './abort'
 
 const abortingFunction = () => abort()
 describe('abort()', () => {

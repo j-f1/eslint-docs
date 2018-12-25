@@ -1,6 +1,6 @@
-import { RuleMeta } from '../read-rule'
+import { RuleMeta } from './read-rule'
 
-import updateReadme, { buildBlock } from '../update-readme'
+import updateReadme, { buildBlock } from './update-readme'
 
 jest.mock('../../spinner')
 

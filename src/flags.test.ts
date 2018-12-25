@@ -1,4 +1,4 @@
-import { parse } from '../flags'
+import { parse } from './flags'
 
 const checkArgs = (args: string[]) => expect(parse(args)).toMatchSnapshot()
 const dropArgs = (parsed: ReturnType<typeof parse>) => {
