@@ -5,14 +5,9 @@ plugins:
 
 extends:
   - standard
-  - prettier
+  - plugin:prettier/recommended
 
 rules:
-  prettier/prettier:
-    - error
-    - semi: false
-      singleQuote: true
-      trailingComma: es5
 
 env:
   jest: true
