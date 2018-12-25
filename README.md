@@ -1,6 +1,7 @@
 # eslint-docs
 
 [![NPM version](https://img.shields.io/npm/v/eslint-docs.svg?style=flat-square)](https://npmjs.org/package/eslint-docs)
+![NPM version](https://img.shields.io/npm/types/eslint-docs.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/j-f1/eslint-docs/master.svg?style=flat-square)](https://travis-ci.org/j-f1/eslint-docs)
 [![Codecov](https://img.shields.io/codecov/c/github/j-f1/eslint-docs.svg?style=flat-square)](https://codecov.io/gh/j-f1/eslint-docs)
 [![Greenkeeper enabled](https://img.shields.io/badge/greenkeeper-enabled-00c775.svg?style=flat-square)](https://greenkeeper.io/)
@@ -60,7 +61,6 @@ eslintDocs(yourProjectDirectory).then(() => {
 
 `yourProjectDirectory` defaults to the closest directory above `process.cwd()`
 that includes a `package.json`
-
 
 ## License
 
