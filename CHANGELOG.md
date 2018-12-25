@@ -1,3 +1,8 @@
+# v0.3.x
+
+## v0.3.0
+Convert the codebase to TypeScript; extract the diff function to [a separate package](https://npmjs.com/package/cli-diff)
+
 # v0.2.x
 
 ## v0.2.7
