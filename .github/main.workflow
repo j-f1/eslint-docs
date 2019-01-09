@@ -1,24 +1,38 @@
 workflow "Run tests" {
   on = "push"
   resolves = [
-    "Test",
     "Lint",
+    "Push Coverage",
   ]
 }
 
 action "Install Dependencies" {
   uses = "CultureHQ/actions-yarn@master"
-  args = ["install"]
+  args = "install"
 }
 
 action "Test" {
   uses = "CultureHQ/actions-yarn@master"
   needs = ["Install Dependencies"]
-  args = ["jest"]
+  args = "jest"
 }
 
 action "Lint" {
   uses = "CultureHQ/actions-yarn@master"
   needs = ["Install Dependencies"]
-  args = ["lint"]
+  args = "lint"
+}
+
+action "Only Branch Pushes" {
+  uses = "actions/bin/filter@master"
+  needs = ["Test"]
+  args = "branch"
+}
+
+action "Push Coverage" {
+  uses = "docker://node:11"
+  needs = ["Only Branch Pushes"]
+  secrets = ["CODECOV_TOKEN"]
+  runs = "bash -c"
+  args = ["npx codecov --disable=detect --commit=$GITHUB_SHA --branch=${GITHUB_REF#refs/heads/}"]
 }
