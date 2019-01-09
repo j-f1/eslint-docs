@@ -3,16 +3,10 @@ node_js:
   - 10
   - 8
   - 6
+cache: yarn
 
 notifications:
   email: false
 
-before_install:
-# package-lock.json was introduced in npm@5
-- npm install -g npm@5
-- npm install -g greenkeeper-lockfile@1
-- npm install -g codecov
-before_script: greenkeeper-lockfile-update
-after_script:
-  - codecov
-  - greenkeeper-lockfile-upload
+before_install: npm install -g codecov
+after_script: codecov
