@@ -48,10 +48,10 @@
     "typescript": "^3.2.2"
   },
   "scripts": {
-    "prepublishOnly": "npm run compile",
+    "prepare": "npm run build",
     "lint": "eslint src --ext ts",
     "fix": "yarn lint --fix",
-    "compile": "rimraf dist && tsc && babel dist -d dist",
+    "build": "rimraf dist && tsc && babel dist -d dist",
     "test": "yarn lint && yarn jest"
   },
   "repository": "j-f1/eslint-docs",
