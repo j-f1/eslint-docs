@@ -18,7 +18,7 @@ import updateReadme from './actions/update-readme'
 
 export default unabort(
   async (projectRoot: string | Promise<string> = defaultRoot) => {
-    const { isTTY } = process.stdout
+    const isTTY = process.stdout.isTTY && !process.env.CI
     const project = register(await projectRoot)
     const { rulesDir, readmePath, docsDir } = project
     projectRoot = project.projectRoot
