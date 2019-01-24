@@ -3,7 +3,7 @@ import { getShorthandName } from './package-name'
 describe('getShorthandName', () => {
   const testName = (name: string) => getShorthandName(name, 'eslint-plugin')
 
-  it('expect correct package name', () => {
+  it('properly shortens non-scoped package names', () => {
     expect(testName('')).toEqual('')
     expect(testName('foo-test')).toEqual('foo-test')
     expect(testName('eslint-plugin-eslint-plugin')).toEqual('eslint-plugin')
@@ -12,7 +12,7 @@ describe('getShorthandName', () => {
     expect(testName('eslint-plugin-jest')).toEqual('jest')
   })
 
-  it('expect correct scoped package name', () => {
+  it('properly shortens scoped package names', () => {
     expect(testName('@test/foo-test')).toEqual('@test/foo-test')
     expect(testName('@test/eslint-plugin-eslint-plugin')).toEqual(
       '@test/eslint-plugin'
