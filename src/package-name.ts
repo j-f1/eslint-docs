@@ -22,10 +22,10 @@
 
 /**
  * Removes the prefix from a fullname.
- * @param {string} fullname The term which may have the prefix.
- * @param {string} prefix The prefix to remove.
- * @returns {string} The term without prefix.
- * @see https://github.com/eslint/eslint/blob/6009239042cb651bc7ca6b8c81bbe44c40327430/lib/util/naming.js#L69
+ * Source: https://github.com/eslint/eslint/blob/60092390/lib/util/naming.js#L69
+ * @param fullname The term which may have the prefix.
+ * @param prefix The prefix to remove.
+ * @returns The term without prefix.
  */
 export function getShorthandName(fullname: string, prefix: string) {
   if (fullname[0] === '@') {
