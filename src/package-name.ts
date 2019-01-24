@@ -22,7 +22,7 @@
 
 /**
  * Removes the prefix from a fullname.
- * Source: https://github.com/eslint/eslint/blob/60092390/lib/util/naming.js#L69
+ * @see https://github.com/eslint/eslint/blob/60092390/lib/util/naming.js#L69
  * @param fullname The term which may have the prefix.
  * @param prefix The prefix to remove.
  * @returns The term without prefix.
