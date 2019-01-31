@@ -43,12 +43,13 @@ action "Only master branch" {
 }
 
 action "Release" {
-  uses = "CultureHQ/actions-yarn@master"
+  uses = "docker://node:11"
   needs = [
     "Push Coverage",
     "Lint",
     "Only master branch",
   ]
   secrets = ["NPM_TOKEN", "GITHUB_TOKEN"]
-  args = "semantic-release"
+  runs = "bash -c"
+  args = ["semantic-release"]
 }
