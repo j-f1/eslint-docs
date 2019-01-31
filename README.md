@@ -50,13 +50,15 @@ In a Node.js script
 ```js
 const eslintDocs = require('eslint-docs')
 
-eslintDocs(yourProjectDirectory).then(() => {
-  // Everything went OK!
-}, () => {
-  // Something went wrong!
-  // Currently, you’ll have to ask the user to look at the terminal. sorry :(
-})
-
+eslintDocs(yourProjectDirectory).then(
+  () => {
+    // Everything went OK!
+  },
+  () => {
+    // Something went wrong!
+    // Currently, you’ll have to ask the user to look at the terminal. sorry :(
+  }
+)
 ```
 
 `yourProjectDirectory` defaults to the closest directory above `process.cwd()`

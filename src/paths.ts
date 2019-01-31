@@ -1,4 +1,5 @@
 import { join } from 'path'
+import { getShorthandName } from './package-name'
 
 export interface Paths {
   rulesDir: string
@@ -13,9 +14,9 @@ export const handlers: Handlers = {
   docsDir: projectRoot => join(projectRoot, 'docs', 'rules'),
   readmePath: projectRoot => join(projectRoot, 'README.md'),
   pluginName: projectRoot =>
-    require(join(projectRoot, 'package.json')).name.replace(
-      /^eslint-plugin-/,
-      ''
+    getShorthandName(
+      require(join(projectRoot, 'package.json')).name,
+      'eslint-plugin'
     ),
 }
 
