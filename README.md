@@ -5,6 +5,7 @@
 [![Build Status](https://img.shields.io/travis/j-f1/eslint-docs/master.svg?style=flat-square)](https://travis-ci.org/j-f1/eslint-docs)
 [![Codecov](https://img.shields.io/codecov/c/github/j-f1/eslint-docs.svg?style=flat-square)](https://codecov.io/gh/j-f1/eslint-docs)
 [![Greenkeeper enabled](https://img.shields.io/badge/greenkeeper-enabled-00c775.svg?style=flat-square)](https://greenkeeper.io/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 
 > Keep your rule names and descriptions up-to-date across your repo
 
