@@ -51,5 +51,5 @@ action "Release" {
   ]
   secrets = ["NPM_TOKEN", "GITHUB_TOKEN"]
   runs = "bash -c"
-  args = ["semantic-release"]
+  args = ["npx semantic-release"]
 }
