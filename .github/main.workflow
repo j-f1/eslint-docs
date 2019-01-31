@@ -1,8 +1,7 @@
-workflow "Run tests" {
+workflow "Run tests & release" {
   on = "push"
   resolves = [
-    "Lint",
-    "Push Coverage",
+    "Release",
   ]
 }
 
@@ -35,4 +34,21 @@ action "Push Coverage" {
   secrets = ["CODECOV_TOKEN"]
   runs = "bash -c"
   args = ["npx codecov --disable=detect --commit=$GITHUB_SHA --branch=${GITHUB_REF#refs/heads/}"]
+}
+
+
+action "Only master branch" {
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
+action "Release" {
+  uses = "CultureHQ/actions-yarn@master"
+  needs = [
+    "Push Coverage",
+    "Lint",
+    "Only master branch",
+  ]
+  secrets = ["NPM_TOKEN", "GITHUB_TOKEN"]
+  args = "semantic-release"
 }
