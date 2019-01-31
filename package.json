@@ -45,14 +45,16 @@
     "prettier": "1.15.3",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.5",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "semantic-release": "^15.13.3"
   },
   "scripts": {
     "prepare": "npm run build",
     "lint": "eslint src --ext ts",
     "fix": "yarn lint --fix",
     "build": "rimraf dist && tsc && babel dist -d dist",
-    "test": "yarn lint && yarn jest"
+    "test": "yarn lint && yarn jest",
+    "semantic-release": "semantic-release"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {

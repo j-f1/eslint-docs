@@ -1,3 +1,10 @@
+# v0.4.x
+
+## v0.4.0
+
+- Allow use with scoped repositories
+- Enable `semantic-release`
+
 # v0.3.x
 
 ## v0.3.1
