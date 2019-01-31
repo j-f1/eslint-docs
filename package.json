@@ -53,8 +53,7 @@
     "lint": "eslint src --ext ts",
     "fix": "yarn lint --fix",
     "build": "rimraf dist && tsc && babel dist -d dist",
-    "test": "yarn lint && yarn jest",
-    "semantic-release": "semantic-release"
+    "test": "yarn lint && yarn jest"
   },
   "repository": "j-f1/eslint-docs",
   "jest": {
