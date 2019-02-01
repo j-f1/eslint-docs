@@ -36,7 +36,6 @@ action "Push Coverage" {
   args = ["npx codecov --disable=detect --commit=$GITHUB_SHA --branch=${GITHUB_REF#refs/heads/}"]
 }
 
-
 action "Only master branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
@@ -49,7 +48,11 @@ action "Release" {
     "Lint",
     "Only master branch",
   ]
-  secrets = ["NPM_TOKEN", "GITHUB_TOKEN"]
+  # GH_TOKEN has the right permissions
+  secrets = [
+    "NPM_TOKEN",
+    "GH_TOKEN",
+  ]
   runs = "bash -c"
   args = ["npx semantic-release"]
 }
