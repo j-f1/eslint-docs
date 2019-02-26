@@ -1,7 +1,8 @@
-workflow "Run tests & release" {
+workflow "Lint & run tests" {
   on = "push"
   resolves = [
-    "Release",
+    "Push Coverage",
+    "Lint",
   ]
 }
 
@@ -36,16 +37,20 @@ action "Push Coverage" {
   args = ["npx codecov --disable=detect --commit=$GITHUB_SHA --branch=${GITHUB_REF#refs/heads/}"]
 }
 
+workflow "Release" {
+  on = "push"
+  resolves = ["Publish Release"]
+}
+
 action "Only master branch" {
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
 
-action "Release" {
+action "Publish Release" {
   uses = "docker://node:11"
   needs = [
-    "Push Coverage",
-    "Lint",
+    "Install Dependencies",
     "Only master branch",
   ]
   # GH_TOKEN has the right permissions
