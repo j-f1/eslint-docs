@@ -42,7 +42,7 @@
     "eslint-plugin-typescript": "bradzacher/eslint-plugin-typescript",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
-    "prettier": "1.15.3",
+    "prettier": "1.19.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
