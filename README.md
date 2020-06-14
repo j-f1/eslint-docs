@@ -1,3 +1,9 @@
+# Heads Up!
+
+This package is currently unmaintained. Consider checking out Wikimedia’s [`eslint-docgen`](https://github.com/wikimedia/eslint-docgen) instead.
+
+---
+
 # eslint-docs
 
 [![NPM version](https://img.shields.io/npm/v/eslint-docs.svg?style=flat-square)](https://npmjs.org/package/eslint-docs)
